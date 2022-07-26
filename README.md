@@ -3,6 +3,8 @@
 Verilog (FPGA) implementation of the paper "A Circuit-Level Amoeba-Inspired SAT Solver" from N. Takeuchi, Member, IEEE, M. Aono, Y. Hara-Azumi, and C. L. Ayala, Member, IEEE. The proposed solver is a biologically-inspired stochastic local search (SLS) solver to explore solutions to the Boolean satisfiability problem (SAT). It updates multiple variables in parallel at every iteration step, and thus it can find solutions with a fewer number of iteration steps than some other conventional SLS solvers for a specific set of SAT instances. However, the parallelism of the solver is not compatible with general-purpose microprocessors in that many clock cycles are required to execute each iteration; thus, it requires special hardware that can exploit the parallelism to quickly find solutions. In their paper, they propose a circuit model (hardware-friendly algorithm) that explores solutions to SAT, which they call circuit-level AmbSAT (CLAmbSAT). The authors conducted numerical simulation to evaluate the search performance of CL-AmbSAT for a set of randomly generated SAT instances that was designed to estimate the scalability of their approach. Simulation results showed that CLAmbSAT finds solutions with a fewer iteration number than a powerful SLS solver, ProbSAT, and outperforms even AmbSAT. Since CL-AmbSAT uses simple combinational logic to update variables, CL-AmbSAT can be easily implemented in various
 hardware.
 
+![Screen](screen.png)
+
 ## Requirements
 
 We have tested the implementation on Xilinx and Intel based environments. Python is required to convert the SAT formulation (CNF) into hardware description. 
